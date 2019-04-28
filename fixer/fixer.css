@@ -1,0 +1,46 @@
+* {
+	/*
+		Personally I prefer keeping an eye
+		on margin & paddings
+	*/
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+	/*
+		I also prefer manually enabling
+		user selection ability
+	*/
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	/*
+		Disable gray color outline
+		for pressed buttons on IOS Safari
+	*/
+	-webkit-tap-highlight-color: transparent;
+}
+
+/*
+	Get rid of Firefox dotted border
+*/
+*::-moz-focus-inner {
+	border: 0;
+}
+
+/*
+	Get rid of Chrome blue border
+*/
+*:focus {
+	outline: none;
+}
+
+html {
+	/*
+		Disables double-tap zoom on mobile devices
+	*/
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+}

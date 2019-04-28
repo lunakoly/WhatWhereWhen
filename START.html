@@ -1,0 +1,51 @@
+<html lang="en">
+	<head>
+		<title>Что? Где? Когда?</title>
+		<meta charset="UTF-8">
+
+		<!-- My custom styles that fix some common issues -->
+		<link rel="stylesheet" href="fixer/fixer.css">
+		<!-- Main styles -->
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+	<body>
+		<!-- The central row that stores the main content -->
+		<div id="main">
+			<!-- The roulette with a spinner and a roll button -->
+			<div id="roulette">
+				<div id="spinner"></div>
+				<div id="roll"></div>
+			</div>
+
+			<!-- Task banner that is hidden by default -->
+			<div id="task">
+				<!-- Cover image for the task -->
+				<img id="cover" src="images/unknown.png">
+				<div id="text">
+					В повести М А Куприна "Изумруд", подробно описывается процесс невербальный коммуникации главного героя Изумруда (прозвище), и его "напарника". Не произнеся ни слова, товарищи одержали победу в соревнованиях по 1 виду спорта. Однако Изумруд не получил победного приза, в отличии от своего товарища. Он получил в награду кубик.
+				</div>
+				<div id="question">
+					Что это за кубик ?Кто такой изумруд и что это за такой вид спорта?
+				</div>
+				<div id="result" class="shown">
+					Кубик сахара. Изумруд - лошадь. Скачки.
+				</div>
+
+				<!-- One extra container `controlls` is used to provide `flex` layout -->
+				<div id="controls">
+					<button id="answer">ОТВЕТ</button>
+					<button id="hide">ЗАКРЫТЬ</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Load some my fixer -->
+		<script src="fixer/fixer.js"></script>
+		<!-- Main scrpt -->
+		<script src="script.js"></script>
+		<!-- Tasks data -->
+		<script src="TASKS.js"></script>
+	</body>
+
+</html>

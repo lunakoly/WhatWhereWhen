@@ -1,0 +1,178 @@
+#main {
+	position: relative;
+
+	/* Size of blank space above any content inside #main */
+	padding-top: 100px;
+	margin: auto;
+
+	/* Adaptive width of main */
+	width: 80vw;
+	max-width: 800px;
+}
+
+#roulette {
+	position: relative;
+
+	/* #roulette is as wide as #main allows it to be */
+	width: 100%;
+	/* This means `it's also a square` */
+	padding-top: 100%;
+	/* But a square with very rounded corners */
+	border-radius: 50%;
+
+	background-image: url('images/circle.png');
+	background-size: 100% 100%;
+
+	box-shadow: 0 0 50px #444;
+}
+
+#spinner {
+	/* It's in the middle of the #roulette */
+	position: absolute;
+	left: 50%;
+	top: 50%;
+
+	/* But it's body is a but above */
+	/* Though the rotation center is still in the middle of #roulette */
+	transform-origin: center 87.5%;
+	transform: translate3d(-50%, -87.5%, 0);
+
+	width: 10%;
+	height: 40%;
+
+	background-image: url('images/arrow.png');
+	background-size: 100% 100%;
+}
+
+#roll {
+	/* It's in the middle of the #roulette */
+	position: absolute;
+	left: 50%;
+	top: 50%;
+
+	transform: translate3d(-50%, -50%, 0);
+
+	width: 8%;
+	height: 8%;
+
+	/* It's a circle */
+	border-radius: 50%;
+
+	background-image: url('images/button_tit.png');
+	background-size: 100% 100%;
+
+	cursor: pointer;
+}
+
+#roll:hover:not(.disabled) {
+	/* Make a bit bigger when mouse is over it */
+	transform: translate3d(-50%, -50%, 0) scale3d(1.1, 1.1, 1);
+}
+
+#roll.disabled,
+#roll:active {
+	/* If pressed/disabled it should look darker */
+	background-image: url('images/button_tit_darker.png');
+}
+
+.envelope {
+	/* It's in the middle of the #roulette */
+	position: absolute;
+	left: 50%;
+	top: 50%;
+
+	/* But it's body is a but above */
+	/* Though the rotation center is still in the middle of #roulette */
+	transform-origin: center 350%;
+	transform: translate3d(-50%, -350%, 0) rotateZ(15deg);
+
+	width: 14%;
+	height: 14%;
+
+	background-image: url('images/envelope.png');
+	background-size: 100% 100%;
+
+	cursor: pointer;
+}
+
+.envelope.selected {
+	background-image: url('images/envelope_punk.png');
+}
+
+#task {
+	/* It's in the middle of the #roulette */
+	/* But too upper (behind the screen border) */
+	position: absolute;
+	top: -200%;
+	left: 50%;
+
+	transform: translate3d(-50%, -50%, 0);
+
+	width: 100%;
+
+	background-color: #f0f0f0;
+	border-radius: 15px;
+
+	box-shadow: 0 0 50px #444;
+
+	/* For cover pieces not to be visible over the rounded corners */
+	overflow: hidden;
+
+	/* Also applies for the nested elements */
+	font-family: Arial;
+	font-size: 25px;
+
+	/* Adds animation to movement */
+	transition: top 500ms ease;
+}
+
+#cover {
+	width: 100%;
+}
+
+#text,
+#question,
+#result {
+	padding: 15px;
+}
+
+#question {
+	font-style: italic;
+}
+
+#result {
+	font-weight: bold;
+	display: none;
+}
+
+#result.shown {
+	display: block;
+}
+
+button {
+	margin: 15px 15px;
+	padding: 7px 15px;
+
+	background-color: transparent;
+	border: 4px solid #bbb;
+
+	font-weight: bold;
+	font-family: Arial;
+	font-size: 20px;
+
+	/* Text color */
+	color: #555;
+}
+
+button:hover {
+	background-color: #fff;
+}
+
+button:active {
+	border: 4px solid #ddd;
+}
+
+#controls {
+	display: flex;
+	justify-content: space-between;
+}
